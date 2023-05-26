@@ -1,5 +1,6 @@
 package com.cavalcanti.service.auth;
 
+import java.util.Collection;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,16 @@ public class TokenService    {
 
     public void save(Token storedToken) {
 	tokenRepository.save(storedToken);
+	
+    }
+
+    public Collection<Token> findAllValidTokenByUser(Long id) {
+	
+	return tokenRepository.findAllValidTokenByUser(id);
+    }
+
+    public void saveAll(Collection<Token> validUserTokens) {
+	tokenRepository.saveAll(validUserTokens);
 	
     }
 }

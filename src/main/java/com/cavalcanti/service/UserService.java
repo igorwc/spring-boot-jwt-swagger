@@ -51,6 +51,18 @@ public class UserService implements UserDetailsService {
 	return RegisterUserResponseDTO.fromModel(u);
     }
 
+    public User createUserModel(RegisterUserDTO newUserDTO) {
+
+	var newUser = User.builder()
+		.firstname(newUserDTO.getFirstname())
+		.lastname(newUserDTO.getLastname())
+		.email(newUserDTO.getEmail())
+		.password(newUserDTO.getPassword())
+		.role(newUserDTO.getRole())
+		.build(); 
+	return userRepository.save(newUser);
+    }
+    
     public RegisterUserResponseDTO updateUser(Long id, RegisterUserDTO user) {
 	User existingUser = userRepository.findById(id).orElseThrow();
 	if (user.getFirstname() != null && !user.getFirstname().isBlank()) {
