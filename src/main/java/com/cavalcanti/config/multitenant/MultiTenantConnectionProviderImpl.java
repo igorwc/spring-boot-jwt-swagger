@@ -57,7 +57,8 @@ public class MultiTenantConnectionProviderImpl implements MultiTenantConnectionP
     @Override
     public void releaseConnection(String tenantIdentifier, Connection connection) throws SQLException {
 	try (connection) {
-	    connection.createStatement().execute("USE " + TenantContext.DEFAULT_TENANT);
+//	    connection.createStatement().execute("USE " + TenantContext.DEFAULT_TENANT);
+	    connection.setSchema(TenantContext.DEFAULT_TENANT);
 	} catch (SQLException e) {
 	    throw new HibernateException("Não foi se conectar ao schema padrão", e);
 	}

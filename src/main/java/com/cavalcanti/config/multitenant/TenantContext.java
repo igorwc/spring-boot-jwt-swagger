@@ -1,7 +1,7 @@
 package com.cavalcanti.config.multitenant;
 public class TenantContext {
 
-    final public static String DEFAULT_TENANT = "PUBLIC";
+    final public static String DEFAULT_TENANT = "public";
 
     private static final ThreadLocal<String> currentTenant = ThreadLocal.withInitial(() -> DEFAULT_TENANT);
 

@@ -32,6 +32,7 @@ public class Token {
   public String token;
 
   @Enumerated(EnumType.STRING)
+  @Column(name = "token_type")
   public TokenType tokenType = TokenType.BEARER;
 
   public boolean revoked;
