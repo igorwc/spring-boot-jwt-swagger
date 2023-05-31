@@ -18,7 +18,7 @@ import com.cavalcanti.repository.PersonRepository;
 import jakarta.persistence.NoResultException;
 
 @RestController
-@RequestMapping("person")
+@RequestMapping("/api/person")
 public class PersonController {
 
     private final PersonRepository repository;

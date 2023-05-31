@@ -95,6 +95,7 @@ public class SecurityConfiguration {
 		"/configuration/security",
 		"/swagger-ui/**",
 		"/webjars/**",
+		"/api/person",
 		"/swagger-ui.html")
 		.permitAll()
 		.requestMatchers("/api/v1/management/**").hasAnyRole(

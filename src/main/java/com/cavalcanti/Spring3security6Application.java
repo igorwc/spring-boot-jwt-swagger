@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
 import com.cavalcanti.domain.User;
@@ -13,7 +14,7 @@ import com.cavalcanti.domain.enums.Role;
 import com.cavalcanti.repository.UserRepository;
 import com.cavalcanti.service.auth.AuthenticationService;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
 @EntityScan( basePackages = {"com.cavalcanti.domain"})
 public class Spring3security6Application { 
 
