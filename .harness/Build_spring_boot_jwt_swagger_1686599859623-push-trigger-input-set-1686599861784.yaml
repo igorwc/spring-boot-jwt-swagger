@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_spring_boot_jwt_swagger_1686599859623-push-trigger-input-set
+  identifier: Build_spring_boot_jwt_swagger_1686599859623pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: springprojectlocus
+  pipeline:
+    identifier: Build_spring_boot_jwt_swagger_1686599859623
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
