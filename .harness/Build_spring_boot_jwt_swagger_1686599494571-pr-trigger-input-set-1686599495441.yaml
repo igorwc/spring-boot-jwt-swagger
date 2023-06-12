@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_spring_boot_jwt_swagger_1686599494571-pr-trigger-input-set
+  identifier: Build_spring_boot_jwt_swagger_1686599494571prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_spring_boot_jwt_swagger_1686599494571
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
